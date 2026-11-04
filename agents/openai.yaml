@@ -1,0 +1,4 @@
+interface:
+  display_name: "学术写作风格"
+  short_description: "优化学术论文的句式、段落与术语，形成直接、精确、紧凑的表达。"
+  default_prompt: "使用 $academic-writing-style 撰写或润色这段学术文本，保留技术含义和证据强度，改善句式、段落衔接与术语一致性。"
