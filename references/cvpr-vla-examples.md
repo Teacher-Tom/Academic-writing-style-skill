@@ -27,6 +27,66 @@ Fast-ThinkAct's publication record appears in the first table. Its [author manus
 
 Use these observations to choose syntax and wording. An award is not a language requirement, and the samples do not establish quotas for sentence length, connectors, or contribution items. Reusable structures and collocations are maintained in [patterns.md](patterns.md).
 
+## Whole-Paper Organization Reading
+
+Reviewed on 2026-11-05. Publication and award records were checked against CVF proceedings and the official [2025](https://cvpr.thecvf.com/Conferences/2025/News/Wrap) and [2026](https://cvpr.thecvf.com/Conferences/2026/News/Best_Papers) announcements. The links below identify the public manuscript versions read for structural analysis; section order may differ across versions.
+
+| Paper and version read | Method organization | Evidence organization and writing decision |
+|---|---|---|
+| [VGGT](https://arxiv.org/html/2503.11651), arXiv v1; CVPR 2025 Best Paper | Secs. 3.1-3.4 establish the task and notation, feature backbone, prediction heads, and training. | Sec. 4 evaluates geometric tasks, ablations, and downstream adaptation; Sec. 5 discusses limitations and design issues. Establish interfaces before internal computation and reserve space for interpreting results. |
+| [D4RT](https://arxiv.org/html/2512.08924), arXiv v2; CVPR 2026 Best Paper | Sec. 2 presents the framework, architecture, and training/inference; related work follows in Sec. 3. | Sec. 4 starts with qualitative capability differences, followed by 4D tracking/reconstruction, 3D reconstruction, and ablations. Choose the presentation order that makes an unfamiliar capability understandable. |
+| [Native and Compact Structured Latents](https://arxiv.org/html/2512.14692), arXiv v1; CVPR 2026 Best Student Paper | Secs. 3.1-3.3 introduce the native representation, compression VAE, and generative models that use the learned latents. | Sec. 4 evaluates reconstruction, generation, design choices, and compute/resolution scaling. Establish representation quality independently of downstream utility, then assess both. |
+| [NitroGen](https://arxiv.org/html/2601.02427), arXiv v1; CVPR 2026 Best Paper Honorable Mention | Secs. 2.1-2.3 explain the video-action dataset, evaluation suite, and foundation model. Related work appears in Sec. 5. | Sec. 3 evaluates extracted action labels, multi-game control, and pretraining transfer. Data and evaluation infrastructure receive method space because they are contributions. |
+| [CoT-VLA](https://arxiv.org/html/2503.22020), arXiv v1; CVPR 2025 | Secs. 3.1-3.3 explain visual reasoning, the base model, and pretraining/adaptation; an algorithm specifies closed-loop deployment. | Sec. 4 identifies questions about overall performance, component effects, and the connection between visual reasoning and action prediction. Use those questions to connect comparisons and capability analysis. |
+| [Fast-ThinkAct](https://arxiv.org/html/2601.09708), arXiv v2; CVPR 2026 | Secs. 3.1-3.4 proceed from task formulation to latent reasoning, policy learning, and training/inference. | Sec. 4 reports manipulation and reasoning results alongside latency, then analyzes planning, recovery, adaptation, and components. Distinguish the learned representation from the policy it conditions and evaluate efficiency with task quality. |
+
+These examples motivate organizing a paper around the dependencies among its contributions and the evidence supporting them. The reusable decision guidance is in [manuscript-structure.md](manuscript-structure.md); the examples do not prescribe a fixed section sequence or experiment list.
+
+## Related-Work Reading
+
+Reviewed on 2026-11-05 using the public manuscript versions identified in the whole-paper table above. These observations concern organization and language; comparison claims in a new manuscript still require checking the relevant methods and settings.
+
+| Paper and location | Observation to adapt |
+|---|---|
+| [VGGT](https://arxiv.org/html/2503.11651), Sec. 2 | Organizes discussion by reconstruction and tracking tasks. Defines each task before grouping technical approaches and selecting representative advances. Use a task or mechanism to establish the paragraph's comparison axis. |
+| [Native and Compact Structured Latents](https://arxiv.org/html/2512.14692), Sec. 2 | Compares unstructured and structured latent representations through compression and reconstruction quality, then locates its design within that tradeoff. Keep capabilities and costs tied to the same technical choice. |
+| [D4RT](https://arxiv.org/html/2512.08924), Secs. 3.1-3.2 | Connects prediction heads, multi-stage pipelines, and pairwise processing to computational cost or capability restrictions. Make the mechanism causing a limitation and its task consequence explicit. |
+| [NitroGen](https://arxiv.org/html/2601.02427), Sec. 5 | Groups gaming agents into technical routes and positions its contribution as an extension of behavior cloning through internet-scale data. State which direction the work advances and the concrete change it makes. |
+| [CoT-VLA](https://arxiv.org/html/2503.22020), Sec. 2 | Distinguishes VLMs used as intermediate components from directly trained policies, then identifies the nearest VLA approaches before explaining its reasoning representation. Narrow the discussion from a broad family to the closest comparison. |
+| [Fast-ThinkAct](https://arxiv.org/html/2601.09708), Secs. 2.1-2.2 | Separates foundation VLAs, reasoning VLAs, and efficient reasoning, discussing mechanisms and their transfer to embodied control. Use categories that make the paper's specific technical problem legible. |
+
+Reusable paragraph moves, original sentence templates, and verb collocations are maintained in [related-work.md](related-work.md).
+
+## Method-Writing Reading
+
+Reviewed on 2026-11-05 using the public manuscript versions identified in the whole-paper table above. The observations below concern exposition; the architectures and learning procedures remain specific to their source papers.
+
+| Paper and location | Observation to adapt |
+|---|---|
+| [VGGT](https://arxiv.org/html/2503.11651), Secs. 3.1-3.3 | Defines the image-to-geometry mapping and prediction quantities before detailing tokens, attention, and output heads. Establish what is computed before explaining how internal modules produce it. |
+| [D4RT](https://arxiv.org/html/2512.08924), Secs. 2.1-2.2 | Introduces a scene representation, makes it the decoder's input, and defines query components before their applications. The independent-query design is connected to supervision, parallelism, and inference flexibility. Follow representations across operations and explain the consequences of a design. |
+| [Native and Compact Structured Latents](https://arxiv.org/html/2512.14692), Secs. 3.1-3.2 | Defines representation fields and their roles before describing compression. The upsampler explanation connects efficiency, predicted activation masks, and skipped inactive nodes. Training losses are associated with specific targets. Link purpose, operation, and effect. |
+| [NitroGen](https://arxiv.org/html/2601.02427), Secs. 2.1-2.3 | Explains label recovery and the shared control interface, then traces observations through encoded features to action chunks. Full mathematical details are deferred to an appendix. Allocate detail according to the contribution and what readers need to understand its behavior. |
+| [CoT-VLA](https://arxiv.org/html/2503.22020), Secs. 3.1-3.3 | Conditional equations express subgoal prediction followed by action prediction. Prose identifies the data supervising each step, and training descriptions identify updated and frozen components. Coordinate formal dependencies with supervision and deployment. |
+| [Fast-ThinkAct](https://arxiv.org/html/2601.09708), Secs. 3.2-3.4 | Introduces objectives through the learning needs they address, explains how planning representations condition the policy, and distinguishes frozen components and training-only modules from inference. Associate each objective with a target and make the learning/runtime relationship explicit. |
+
+Reusable mechanism, equation, and objective-writing guidance is maintained in [method-writing.md](method-writing.md).
+
+## Experiment-Writing Reading
+
+Reviewed on 2026-11-05 using the public manuscript versions identified in the whole-paper table above. The observations concern how evidence is presented and interpreted, rather than a universal experimental protocol.
+
+| Paper and location | Observation to adapt |
+|---|---|
+| [CoT-VLA](https://arxiv.org/html/2503.22020), Secs. 4 and 4.4 | States questions about overall performance, components, and reasoning-to-action transfer. Substituting ground-truth for generated subgoals tests the relationship between intermediate quality and downstream execution. Give experiments distinct roles and connect representation evaluation to task behavior. |
+| [NitroGen](https://arxiv.org/html/2601.02427), Sec. 3 | Describes held-out-game transfer comparisons between pretrained initialization and training from scratch, with architecture, data, and compute conditions specified. Explain the controls and adaptation setting that determine a comparison's meaning. |
+| [VGGT](https://arxiv.org/html/2503.11651), Sec. 4.5 | Compares alternative attention architectures while specifying matched capacity and hyperparameters, then distinguishes the effects of training objectives. Describe the changed design and interpret the measured effect within those conditions. |
+| [Native and Compact Structured Latents](https://arxiv.org/html/2512.14692), Secs. 4.1 and 4.4 | Reports representation size, reconstruction metrics, and runtime together. Ablation prose identifies the replacement, selects quality and cost changes, and interprets the design's role. Link the principal finding to the relevant numbers and tradeoff. |
+| [D4RT](https://arxiv.org/html/2512.08924), Sec. 4, Table 3 | Defines throughput through the number of tracks supported at target frame rates on a stated GPU. Match efficiency language to the measured workload and quantity. |
+| [Fast-ThinkAct](https://arxiv.org/html/2601.09708), Secs. 4.2-4.3 | Combines quantitative evaluation with long-horizon execution traces and recovery examples. Explain the concrete behavior illustrated by a qualitative case and relate it to the capability under evaluation. |
+
+Reusable result-paragraph, comparison, and reporting guidance is maintained in [experiment-writing.md](experiment-writing.md).
+
 ## Turn Examples into Writing Decisions
 
 - Study the correspondence between problems and designs, information flow, and evidence placement. Choose direct statements or example-driven exposition according to the task and user preference.

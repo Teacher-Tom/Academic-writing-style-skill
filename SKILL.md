@@ -1,11 +1,11 @@
 ---
 name: academic-writing-style
-description: Draft, revise, and critique Chinese or English academic prose at sentence and paragraph level. Use for concise paper writing, introduction and method polishing, coherent paragraphs, consistent terminology, parallel contribution statements, and evidence-aligned claims, especially in CVPR-style ML, computer vision, and VLA papers. Focus on prose craft rather than a full research or peer-review workflow.
+description: Draft, revise, and critique Chinese or English academic writing at sentence, paragraph, and manuscript level. Use for concise prose, paper organization, related-work, method, and experiment narratives, consistent terminology, and evidence-aligned claims, especially in CVPR-style ML, computer vision, and VLA papers. Focus on writing rather than a full research or peer-review workflow.
 ---
 
 # Academic Writing Style
 
-Write direct, concrete, concise academic prose that makes the problem, mechanism, and evidence clear on first reading. Apply to drafting, revision, and prose analysis in Chinese or English.
+Write direct, concrete, concise academic prose that makes the problem, mechanism, and evidence clear on first reading. Apply to sentence craft, paragraph revision, and manuscript organization in Chinese or English.
 
 ## Task and Source Material
 
@@ -33,8 +33,17 @@ Write direct, concrete, concise academic prose that makes the problem, mechanism
 - Open the next sentence with established information when useful. An output can become the next subject, and a defined representation can become the condition for the next operation. Reuse stable terminology to track objects, states, and updates.
 - Mark purpose, concession, contrast, progression, and consequence explicitly when needed. Choose clauses or sentence transitions according to the reading flow. Preserve necessary links without mechanically prefacing every sentence with a connector.
 - Narrow introductions from application constraints to a specific problem, then outline the method and evidence. Keep contribution statements parallel and distinguish their mechanisms, supervision, or capabilities.
-- Organize related work around the current problem, methods around computational relationships, and results around the questions answered. Adapt structure to the section's function.
-- When discussing prior work, use concessions to connect a capability with its cost under the same technical tradeoff. Specify the mechanism and scope of a comparison; do not extend a limitation to all previous methods.
+- Organize methods around computational relationships. Build result paragraphs around the evaluation question, key finding, selected quantitative evidence, and interpretation. Adapt structure to the section's function.
+- In method prose, connect a local design goal to the computation and its role. Use equations to specify relationships and prose to explain quantities, dependencies, and consequences.
+- Organize related work by technical routes and comparison axes tied to the current problem. Group citations for shared mechanisms and expand on the closest methods. Explain how the current work builds on, extends, differs from, or complements those routes.
+- When discussing prior work, connect a capability with its cost under the same technical tradeoff. Explain limitations through the design causing them and their task consequences. Ground the comparison's scope in the cited methods and settings.
+
+## Manuscript Organization
+
+- Let the central contributions guide section and subsection boundaries. Connect each claim to its design and supporting evidence; distinguish completed experiments from proposed analyses.
+- Order methods by conceptual and computational dependencies. Establish the task and system interface before explaining internal mechanisms. Make supervision targets, signals, and optimized parameters explicit, and distinguish training stages from the deployed inference path.
+- Organize experiments around the claims being tested and state the conditions that determine each comparison's meaning. Where relevant, connect representation quality to downstream utility and present efficiency together with task performance.
+- Allocate main-text space to the definitions, mechanisms, and evidence needed to assess the contribution. Use supplementary material for expanded implementation details and supporting results. Choose related-work placement, separate data or discussion sections, and experiment order to fit the paper.
 
 ## Terminology, Evidence, and Citations
 
@@ -52,4 +61,8 @@ Write direct, concrete, concise academic prose that makes the problem, mechanism
 - Deliver the requested prose, files, or feedback. Explain choices that affect technical meaning; keep routine revision reports brief.
 
 For clause organization, logical transitions, verb collocations, and paragraph examples, read [references/patterns.md](references/patterns.md).
-When asked to study CVPR/VLA writing or trace this skill's reading basis, read [references/cvpr-vla-examples.md](references/cvpr-vla-examples.md). It includes syntax observations from CVPR 2026 award-winning papers and related VLA papers. These examples are not mandatory templates.
+For related-work organization, comparison sentences, and technical positioning, read [references/related-work.md](references/related-work.md).
+For method exposition, equations, learning objectives, and training/inference descriptions, read [references/method-writing.md](references/method-writing.md).
+For experimental setup, result paragraphs, ablations, efficiency reports, and figure/table language, read [references/experiment-writing.md](references/experiment-writing.md).
+For paper outlines, section organization, and experimental narratives, read [references/manuscript-structure.md](references/manuscript-structure.md).
+When asked to study CVPR/VLA writing or trace this skill's reading basis, read [references/cvpr-vla-examples.md](references/cvpr-vla-examples.md). It includes observations on syntax, related work, methods, experiments, and whole-paper organization from CVPR 2025-2026 papers. These examples are not mandatory templates.

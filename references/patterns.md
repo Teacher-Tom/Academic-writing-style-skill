@@ -69,13 +69,17 @@ State what changes before describing inputs, central operations, state flow, and
 
 For a method with two timescales, explain how the long-term state receives the short-term state rather than merely naming both memories.
 
+For full method sections, mathematical exposition, objectives, and training/inference descriptions, read [method-writing.md](method-writing.md).
+
 ### Related Work
 
-Compare representations, information sources, update mechanisms, and cost in relation to the current problem. Ground each comparison in the cited paper and its actual setting. Close the discussion by identifying the capability the current problem requires.
+Compare representations, information sources, update mechanisms, and cost in relation to the current problem. Ground each comparison in the cited paper and its actual setting. Establish the current work's relationship to the relevant route: inheritance, extension, difference, or complementarity. For paragraph organization and comparison-specific sentence patterns, read [related-work.md](related-work.md).
 
 ### Results
 
 Organize around the question answered, the key comparison, and the scope or interpretation of the result. Keep conclusions close to their figure or table evidence. Distinguish component ablations, overall gains, and causal explanations.
+
+For setup, result paragraphs, ablation descriptions, efficiency reporting, and comparison language, read [experiment-writing.md](experiment-writing.md).
 
 ### Contributions
 

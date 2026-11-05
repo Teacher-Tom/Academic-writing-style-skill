@@ -1,4 +1,4 @@
 interface:
   display_name: "Academic Writing Style"
-  short_description: "Polish academic syntax, flow, and technical wording."
-  default_prompt: "Use $academic-writing-style to draft or revise this academic text, preserving technical meaning and claim strength while improving syntax, paragraph flow, and terminology."
+  short_description: "Polish academic prose and organize paper arguments."
+  default_prompt: "Use $academic-writing-style to draft or revise this academic text, preserving technical meaning and claim strength while improving prose, manuscript organization, and the connection between contributions and evidence."
