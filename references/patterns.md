@@ -1,90 +1,123 @@
-# 句式与段落参考
+# Sentence and Paragraph Patterns
 
-以下英文均为原创示例；按实际方法、证据和术语改写，不逐句套用。
+All example prose below is original. Adapt it to the actual method, evidence, and terminology rather than reproducing it sentence by sentence.
 
-## 按句子任务选择骨架
+## Choose a Structure by Sentence Function
 
-| 任务 | 常用骨架 | 示例 |
+| Function | Possible structure | Example |
 |---|---|---|
-| 声明设计 | We introduce/design … | We introduce a gated recurrent memory for long-horizon control. |
-| 定义操作 | Module + verb + object | The encoder maps observations and instructions to contextualized features. |
-| 交代目的 | To achieve X, we perform Y. | To preserve recent visual detail, we update the short-term state more frequently. |
-| 解释机制 | Operation, followed by its role | The gate merges incoming evidence with the previous state to update the memory. |
-| 说明时间或条件 | When/Every/At …, operation | At each consolidation step, the long-term state incorporates the short-term memory. |
-| 交代设置 | Object + passive construction | The policy is trained to predict action sequences over a longer horizon. |
-| 报告结果 | In setting X, method changes metric Y relative to baseline Z. | 在实际任务、指标和对照齐全后写出比较，不把示例补成虚构结果。 |
+| State a design | We introduce/design ... | We introduce a gated recurrent memory for long-horizon control. |
+| Define an operation | Module + verb + object | The encoder maps observations and instructions to contextualized features. |
+| Explain a purpose | To achieve X, we perform Y. | To preserve recent visual detail, we update the short-term state more frequently. |
+| Explain a mechanism | Operation followed by its role | The gate merges incoming evidence with the previous state to update the memory. |
+| Add a direct product | Module + operation, producing Y. | The encoder integrates observations and actions, producing a compact representation of task history. |
+| Connect benefit and cost | While X preserves A, it discards B. | While a sliding window preserves recent detail, it discards evidence outside the window. |
+| Explain a consequence through an operation | Doing X requires Y / increases Z. | Storing each frame separately increases memory usage as the history grows. |
+| Specify time or conditions | When/Every/At ..., operation | At each consolidation step, the long-term state incorporates the short-term memory. |
+| Describe a training setting | Object + passive construction | The policy is trained to predict action sequences over a longer horizon. |
+| Report a result | In setting X, method changes metric Y relative to baseline Z. | Supply the actual setting, metric, and baseline before stating a comparison; do not invent a result to complete the example. |
 
-不同句子可以分别以作者、模块、输入或状态开头。根据叙述焦点选择主语，避免所有句子都以 We 或 This 开头。
+Sentences can begin with authors, modules, inputs, or states. Choose the subject by narrative focus rather than repeatedly beginning with We or This.
 
-## 信息承接
+Put the operation or judgment the reader should remember in the main clause, then add inputs, conditions, and products. Participial clauses suit direct results of the same operation. Use a full clause or a new sentence when a consequence introduces another subject, an additional assumption, or an independent claim.
 
-连续句子的对象有意复用，输出与下一步操作保持可追踪：
+## Relationships Within and Between Sentences
+
+Choose expressions by the actual relationship so the reader understands why the argument moves to another method, limitation, or design:
+
+| Relationship | Possible expressions | When useful |
+|---|---|---|
+| Purpose | To retain / To reduce / To enable | The next operation responds to an information need or computational constraint established earlier. |
+| Concession | While / Although / Despite | The same technical choice provides a capability and incurs a cost; both clauses concern that tradeoff. |
+| Alternative | instead / alternatively | Another route addresses the same problem; identify what changes in the processing strategy. |
+| Contrast | However / Yet | The discussion moves from an established capability to an unresolved problem. |
+| Progression | Moreover / Furthermore / More fundamentally | Add supporting reasoning; reserve More fundamentally for a deeper mechanism or assumption. |
+| Consequence | therefore / thus / Consequently / As a result | The preceding text explains the mechanism producing the consequence. A connector does not supply missing causal reasoning. |
+| Mechanism or detail | Specifically / By / through | Develop a general claim into concrete operations and information flow. |
+
+Embed relationships in purpose, concession, condition, or result clauses, or mark them between sentences. Splitting everything into short sentences can obscure relationships; adding connectors cannot repair topic jumps or missing causal steps. Identify the relationship before choosing the syntax.
+
+> While a sliding window preserves recent visual detail, it discards evidence outside the window. To retain earlier events, the memory module integrates incoming observations with its previous state. The policy then reads the updated state to condition action prediction.
+
+This example connects a technical tradeoff, a design purpose, and an information flow. The actual architecture and retention claims must follow the current system and its evidence.
+
+## Information Continuity
+
+Reuse objects deliberately so the output of one operation remains traceable in the next:
 
 > A task-conditioned encoder processes visual observations and executed actions. A Q-Former compresses the resulting features into candidate memory tokens. Gated updates merge these candidates with the previous state. The policy reads the updated memory to predict actions.
 
-该示例展示“输入 → 特征 → 候选表示 → 状态 → 动作”的阅读顺序。真实系统若异步读写，应改为读取最新可用状态，并准确交代提交与读取的时序。
+The reading order is input, features, candidate representation, state, and action. For asynchronous systems, describe reading the latest available state and accurately specify the timing of commits and reads.
 
-复用术语前先分清对象。例如，history 表示原始历史，memory state 表示递归状态，memory tokens 表示其向量载体，memory encoder 表示计算模块。这些词可以相关，但不作为随意替换的同义词。
+Distinguish objects before reusing terms. For example, history denotes the source history, memory state the recurrent state, memory tokens its vector representation, and memory encoder the computational module. These terms are related but are not interchangeable synonyms.
 
-## 段落按功能组织
+## Organize Paragraphs by Function
 
-### 问题或局限
+### Problem or Limitation
 
-可采用“明确判断 → 具体情景或机制 → 对任务的后果 → 设计需求”。保留有助于建立因果关系的环节，不强行补齐四句话。
+A useful progression is claim, concrete situation or mechanism, task consequence, and design need. Include the steps that establish the reasoning; do not force a four-sentence template.
 
 > A short observation window loses evidence once it leaves the context. In a search task, a previously explored route may then become indistinguishable from an unvisited one. The policy needs a compact state that preserves exploration progress.
 
-具体例子用于解释信息需求；实验结论仍由当前论文的数据支撑。
+Examples explain information needs. Experimental conclusions still require the current paper's data.
 
-### 方法概述
+### Method Overview
 
-先明确改变了什么，再交代输入、核心操作、状态流与输出。引言选择足以理解设计的细节；超参数、完整公式和训练调度放到合适的方法小节。
+State what changes before describing inputs, central operations, state flow, and outputs. An introduction needs enough detail to explain the design; place hyperparameters, full equations, and training schedules in the appropriate method sections.
 
 > The memory module maintains a fixed-size recurrent state. An encoder compresses new observations and actions into candidate tokens, which gated updates integrate with the previous state. The action policy reads the latest available memory while the encoder processes incoming observations.
 
-双时间尺度方法还需明确长期状态如何接收短期状态；不能只列出两组记忆的名称。
+For a method with two timescales, explain how the long-term state receives the short-term state rather than merely naming both memories.
 
-### 相关工作
+### Related Work
 
-围绕当前问题比较不同路线的表示、信息来源、更新方式和开销。每项比较对应具体论文及其实际设置；每段末尾收束到当前问题需要的能力。
+Compare representations, information sources, update mechanisms, and cost in relation to the current problem. Ground each comparison in the cited paper and its actual setting. Close the discussion by identifying the capability the current problem requires.
 
-### 结果
+### Results
 
-按“回答的问题 → 关键比较 → 结果范围或解释”组织。结论紧邻表格或图中的证据；组件消融、整体收益和因果解释分别陈述。
+Organize around the question answered, the key comparison, and the scope or interpretation of the result. Keep conclusions close to their figure or table evidence. Distinguish component ablations, overall gains, and causal explanations.
 
-### 贡献列表
+### Contributions
 
-条目采用一致的句法起点，如全部用 We introduce …，或全部用名词短语。每项贡献写出不同的机制、监督或能力，避免三个条目反复改写“提高性能”。
+Use parallel openings, such as We introduce ... throughout, or noun phrases throughout. Identify a distinct mechanism, supervision source, or capability in each item rather than repeatedly restating improved performance.
 
-## 动词与论断强度
+## Verbs and Claim Strength
 
-优先让动词对应操作对象：
+Match verbs to objects while preserving the differences between operations:
 
-- encode observations / instructions；compress features / history。
-- update states；retrieve entries；aggregate evidence。
-- condition action prediction on memory；align representations / trajectories。
-- optimize an objective；reduce a measured error；improve a named metric。
+| Operation | Useful collocations | Meaning |
+|---|---|---|
+| Encoding | encode observations / instructions into features | Transform inputs into representations. |
+| Integration | integrate observations and actions | Combine inputs or incoming and previous information. |
+| Historical consolidation | consolidate observations into a memory state | Organize distributed historical evidence into a maintained representation. |
+| Compression | compress features / history into fewer tokens | Reduce the representation budget; explain information retention through training objectives and evaluation. |
+| Retention | retain events / preserve visual evidence | Name the information being preserved. |
+| Updating and retrieval | update a state / retrieve entries | Distinguish changing a state from reading stored entries. |
+| Conditioning and alignment | condition action prediction on memory / align trajectories | Distinguish what conditions a policy from what a training objective aligns. |
+| Optimization and results | optimize an objective / reduce a measured error / improve a named metric | Distinguish objectives, measured changes, and evaluation metrics. |
 
-检查从动词到证据的距离：
+Check how directly the evidence supports the verb:
 
-- **实现**：使用门控、投影或异步调度等已确认的操作，可直接陈述。
-- **训练目标**：用 is trained to retain … 或 receives supervision for …，明确这是监督目的。
-- **观察**：用 retains …、improves … 时，对应实际评测。
-- **解释**：当机制解释尚非直接证明时，用 suggests … 等与证据相称的表达。
+- **Implementation:** State confirmed operations such as gating, projection, and asynchronous scheduling directly.
+- **Training objective:** Use is trained to retain ... or receives supervision for ... to identify an intended learning target.
+- **Observation:** Support retains ... and improves ... with the corresponding evaluation.
+- **Interpretation:** Use wording such as suggests ... when a mechanism is an explanation rather than a directly established result.
 
-## 容易改变技术含义的润色
+Modifiers should also have distinct roles. Compact describes representation size, recurrent the update mechanism, task-conditioned the conditioning source, and fixed-budget the capacity constraint. Tie higher-level to an actual abstraction, such as event relationships, state changes, or task progress in the relevant setting. Explain what information it organizes rather than using it as a standalone evaluation of capability.
 
-| 输入表述 | 编辑判断 |
+## Revisions That Can Change Technical Meaning
+
+| Draft claim | Editorial decision |
 |---|---|
-| “异步，所以没有任何额外延迟。” | 分别说明执行重叠和实际测得的关键路径影响。只有相应测量支持时再报告零增加。 |
-| “SFT 对不同轨迹错误施加相同惩罚。” | 核实目标函数；若材料仅说明 token 级监督缺少轨迹目标，应表述为不直接优化轨迹误差。 |
-| “压缩后没有信息损失。” | 区分理论无损保证、某项任务指标保持，以及训练时希望保留的信息。 |
-| “提升若干百分比。” | 明确是百分比相对变化还是百分点绝对变化，并保留比较基线。 |
-| “显著提升。” | 对应统计显著性检验或明确数值证据；根据论文原意选择准确用词。 |
+| Asynchronous execution adds no latency. | Separate execution overlap from measured critical-path overhead. Report zero added latency only when supported by the relevant measurement. |
+| SFT applies the same penalty to different trajectory errors. | Check the objective. If the source only establishes the absence of a trajectory-level objective, say that token-level supervision does not directly optimize trajectory error. |
+| Compression loses no information. | Distinguish a formal lossless guarantee, preservation of a particular task metric, and the information the training objective aims to retain. |
+| Performance improves by a percentage. | Specify relative percent change or absolute percentage points and retain the baseline. |
+| Performance improves significantly. | Check statistical significance or measured effect size and choose wording that matches the evidence. |
 
-## 语言节制
+## Restraint in Wording
 
-- 删除可省略的元叙述，如 It is important to note that …，以及反复介绍下一段要做什么的句子。
-- 保留有作用的连接词：However 标记限制，Specifically 引出操作，Consequently 说明已经建立的因果结果。关系足够清楚时直接承接。
-- 用技术属性替代无具体含义的自我评价，如 recurrent、task-conditioned、fixed-size；核实它们确实描述当前方法。
-- 对必要限制、真实对比、行业标准词和长句逐项判断，不实施绝对禁词、固定句长、统一段数或标点配额。
+- Remove dispensable metadiscourse, such as It is important to note that ..., and repeated announcements of what the next paragraph will do.
+- Preserve useful connectors: However marks a limitation, Specifically introduces an operation, and Consequently states an established consequence. Use direct information continuity when the relationship is already clear.
+- Replace empty self-evaluation with verified technical properties such as recurrent, task-conditioned, and fixed-size.
+- Judge necessary qualifications, real comparisons, established technical terms, and long sentences in context. Do not impose absolute word bans, fixed sentence lengths, uniform paragraph counts, or punctuation quotas.

@@ -1,20 +1,36 @@
-# CVPR 2025–2026 VLA 写作实例
+# Writing Examples from CVPR 2025-2026
 
-阅读依据：2026-11-04 查阅的六篇 CVF 正式版论文，重点为引言、方法组织、贡献列表与实验叙事。下列内容是写作观察；目标会议的强制要求应另查当届官方指南。
+Initial reading: six CVF proceedings papers reviewed on 2026-11-04, focusing on introductions, method organization, contributions, and experimental narratives. The notes below are writing observations. Consult the target conference's official guidelines for mandatory requirements.
 
-| 论文 | 发表记录与正文 | 可借鉴的组织方式 |
+| Paper | Publication record and text | Organizational observation |
 |---|---|---|
-| CoT-VLA: Visual Chain-of-Thought Reasoning for Vision-Language-Action Models | CVPR 2025，1702–1713。[正文](https://openaccess.thecvf.com/content/CVPR2025/papers/Zhao_CoT-VLA_Visual_Chain-of-Thought_Reasoning_for_Vision-Language-Action_Models_CVPR_2025_paper.pdf) | 引言 §1 先确立子目标图像这一中间表示，再解释动作生成与视频数据利用；实验 §4 用问题串联整体比较、消融与能力分析。 |
-| ShowUI: One Vision-Language-Action Model for GUI Visual Agent | CVPR 2025，19498–19508。[正文](https://openaccess.thecvf.com/content/CVPR2025/papers/Lin_ShowUI_One_Vision-Language-Action_Model_for_GUI_Visual_Agent_CVPR_2025_paper.pdf) | 引言 §1 将视觉开销、交错历史和数据选择拆开，对应 §2 的设计；反复使用相同模块名称，使问题与解法容易对应。 |
-| MoManipVLA: Transferring Vision-language-action Models for General Mobile Manipulation | CVPR 2025，1714–1723。[正文](https://openaccess.thecvf.com/content/CVPR2025/papers/Wu_MoManipVLA_Transferring_Vision-language-action_Models_for_General_Mobile_Manipulation_CVPR_2025_paper.pdf) | 引言 §1 将缺口收束到固定底座策略的移动操作迁移；§3 按策略接口、物理约束、优化流程展开，贡献条目区分框架、目标与验证。 |
-| Fast-ThinkAct: Efficient Vision-Language-Action Reasoning via Verbalizable Latent Planning | CVPR 2026，5070–5081。[正文](https://openaccess.thecvf.com/content/CVPR2026/papers/Huang_Fast-ThinkAct_Efficient_Vision-Language-Action_Reasoning_via_Verbalizable_Latent_Planning_CVPR_2026_paper.pdf) | 引言 §1 围绕推理收益与延迟形成张力；§3 把紧凑表示、蒸馏监督和动作策略衔接起来，操作动词说明各步职责。 |
-| Global Prior Meets Local Consistency: Dual-Memory Augmented Vision-Language-Action Model for Efficient Robotic Manipulation（OptimusVLA） | CVPR 2026，35135–35145。[正文](https://openaccess.thecvf.com/content/CVPR2026/papers/Li_Global_Prior_Meets_Local_Consistency_Dual-Memory_Augmented_Vision-Language-Action_Model_for_CVPR_2026_paper.pdf) | 引言 §1 的两个限制分别对应 GPM、LCM；时间依赖的解释包含具体任务阶段与控制后果。§4 分别检查性能、效率与模块作用。 |
-| ForeAct: Steering Your VLA with Efficient Visual Foresight Planning | CVPR 2026，37195–37205。[正文](https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_ForeAct_Steering_Your_VLA_with_Efficient_Visual_Foresight_Planning_CVPR_2026_paper.pdf) | 引言 §1 用清理桌面的情景解释分步视觉目标；方法与实验分别交代预测、策略接入及部署，效率结果附带硬件条件。 |
+| CoT-VLA: Visual Chain-of-Thought Reasoning for Vision-Language-Action Models | CVPR 2025, pp. 1702-1713. [Paper](https://openaccess.thecvf.com/content/CVPR2025/papers/Zhao_CoT-VLA_Visual_Chain-of-Thought_Reasoning_for_Vision-Language-Action_Models_CVPR_2025_paper.pdf) | Introduction, Sec. 1: establish subgoal images as an intermediate representation before explaining action generation and video data use. Experiments, Sec. 4: use questions to organize overall comparisons, ablations, and capability analysis. |
+| ShowUI: One Vision-Language-Action Model for GUI Visual Agent | CVPR 2025, pp. 19498-19508. [Paper](https://openaccess.thecvf.com/content/CVPR2025/papers/Lin_ShowUI_One_Vision-Language-Action_Model_for_GUI_Visual_Agent_CVPR_2025_paper.pdf) | Introduction, Sec. 1: separate visual cost, interleaved history, and data selection, corresponding to the designs in Sec. 2. Stable module names make the problem-design correspondence easy to follow. |
+| MoManipVLA: Transferring Vision-language-action Models for General Mobile Manipulation | CVPR 2025, pp. 1714-1723. [Paper](https://openaccess.thecvf.com/content/CVPR2025/papers/Wu_MoManipVLA_Transferring_Vision-language-action_Models_for_General_Mobile_Manipulation_CVPR_2025_paper.pdf) | Introduction, Sec. 1: narrow the gap to adapting fixed-base policies to mobile manipulation. Method, Sec. 3: proceed through the policy interface, physical constraints, and optimization. Contributions distinguish the framework, objective, and validation. |
+| Fast-ThinkAct: Efficient Vision-Language-Action Reasoning via Verbalizable Latent Planning | CVPR 2026, pp. 5070-5081. [Paper](https://openaccess.thecvf.com/content/CVPR2026/papers/Huang_Fast-ThinkAct_Efficient_Vision-Language-Action_Reasoning_via_Verbalizable_Latent_Planning_CVPR_2026_paper.pdf) | Introduction, Sec. 1: connect reasoning benefits to latency through concession, then explain the consequences for real-time control. Method, Sec. 3: connect compact representations, distillation supervision, and action policies using operation verbs. |
+| Global Prior Meets Local Consistency: Dual-Memory Augmented Vision-Language-Action Model for Efficient Robotic Manipulation (OptimusVLA) | CVPR 2026, pp. 35135-35145. [Paper](https://openaccess.thecvf.com/content/CVPR2026/papers/Li_Global_Prior_Meets_Local_Consistency_Dual-Memory_Augmented_Vision-Language-Action_Model_for_CVPR_2026_paper.pdf) | Introduction, Sec. 1: two limitations correspond to GPM and LCM; temporal dependencies are explained through task stages and control consequences. Experiments, Sec. 4: assess performance, efficiency, and module roles separately. |
+| ForeAct: Steering Your VLA with Efficient Visual Foresight Planning | CVPR 2026, pp. 37195-37205. [Paper](https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_ForeAct_Steering_Your_VLA_with_Efficient_Visual_Foresight_Planning_CVPR_2026_paper.pdf) | Introduction, Sec. 1: explain intermediate visual goals with a table-clearing scenario. Describe prediction, policy integration, and deployment in the method and experiments; give hardware conditions with efficiency results. |
 
-## 将实例转化为写作选择
+## Additional Syntax and Word-Choice Reading: CVPR 2026
 
-- 学习问题与设计的对应、信息推进和证据安排；按用户偏好选择直接陈述或例子驱动的叙述。
-- 句子主语通常承担计算职责，术语沿信息流复用。将模块的输入、操作、输出和作用交代清楚。
-- 段落数量、贡献条目数量、相关工作的位置及开场方式随论文变化。六篇实例不能推出统一的强制格式。
-- 对形容词、设问、宽泛开场和强创新措辞独立判断；正式发表不意味着每一处表达都适合当前稿件。
-- 不把 VLA 的动作空间、记忆结构、推理机制等领域细节推广成其他学科的硬性写作要求。
+Reviewed on 2026-11-05. Publication status follows CVF proceedings records; awards follow the [official conference announcement](https://cvpr.thecvf.com/Conferences/2026/News/Best_Papers). The links below point to author manuscripts. Observations concern introductions and method passages; cite the specific version used when quoting a sentence.
+
+| Paper and selection basis | Passage and reusable observation |
+|---|---|
+| [Efficiently Reconstructing Dynamic Scenes One D4RT at a Time](https://arxiv.org/html/2512.08924), Best Paper | Introduction, Sec. 1: make signal fusion the subject, identify its need for test-time optimization, and explain the purpose of that optimization. Method, Sec. 2: define the scene representation produced by the encoder before describing decoder queries. Subjects, verbs, and objects follow the computational flow. |
+| [Native and Compact Structured Latents for 3D Generation](https://arxiv.org/html/2512.14692), Best Student Paper | Introduction, Sec. 1: after defining O-Voxel, use that representation as the established input for the VAE design. Method, Sec. 3.2.1: connect predicting active-voxel masks, skipping inactive nodes, and runtime and memory cost. The sequence exposes the operation, direct consequence, and computational effect. |
+| [NitroGen: An Open Foundation Model for Generalist Gaming Agents](https://arxiv.org/html/2601.02427), Best Paper Honorable Mention | Introduction, Sec. 1: connect complex task-solving ability with domain-specific design cost in the same concession or contrast. Contributions cover data, evaluation, and pretraining, giving each a distinct role. This is a gaming vision-action paper. |
+| [SAM 3D: 3Dfy Anything in Images](https://arxiv.org/html/2511.16624), Best Paper Honorable Mention | Abstract: define the model and task before adding prediction targets and input through a participial clause. Method, Sec. 2: distinguish module roles with predict, refine, and synthesize; explain what cropped object views and full images each contribute. |
+| [AVA-VLA: Improving Vision-Language-Action Models with Active Visual Attention](https://arxiv.org/html/2511.18960), CVPR 2026; the [author project page](https://liauto-dsr.github.io/AVA-VLA-Page/) identifies it as a Highlight | Abstract: define the recurrent state before making it the condition for the attention module, connecting established information to a new operation. Introduction, Sec. 1: link independent frame processing, missing historical context, and its effect on visual attention. |
+
+Fast-ThinkAct's publication record appears in the first table. Its [author manuscript](https://arxiv.org/html/2601.09708), Introduction, Sec. 1, illustrates how benefits, generation cost, and consequences for real-time control can be connected within a longer sentence.
+
+Use these observations to choose syntax and wording. An award is not a language requirement, and the samples do not establish quotas for sentence length, connectors, or contribution items. Reusable structures and collocations are maintained in [patterns.md](patterns.md).
+
+## Turn Examples into Writing Decisions
+
+- Study the correspondence between problems and designs, information flow, and evidence placement. Choose direct statements or example-driven exposition according to the task and user preference.
+- Let sentence subjects carry computational responsibilities and reuse terms along the information flow. State each module's input, operation, output, and role.
+- Paragraph counts, contribution counts, related-work placement, and opening strategies vary across papers. These examples do not define a universal required format.
+- Judge adjectives, rhetorical questions, broad openings, and strong novelty claims independently. Publication does not make every expression suitable for the current manuscript.
+- Keep domain details such as action spaces, memory structures, and reasoning mechanisms specific to the relevant field rather than turning them into universal writing requirements.

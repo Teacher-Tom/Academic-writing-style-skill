@@ -5,49 +5,51 @@ description: Draft, revise, and critique Chinese or English academic prose at se
 
 # Academic Writing Style
 
-写出直接、具体、紧凑的学术文本，让读者一次读懂问题、机制与证据。适用于中英文撰写、翻译、润色和写作分析。
+Write direct, concrete, concise academic prose that makes the problem, mechanism, and evidence clear on first reading. Apply to drafting, revision, and prose analysis in Chinese or English.
 
-## 任务与材料
+## Task and Source Material
 
-- 以用户指定的范围、最新稿件和已确认的技术事实为依据。保留已接受的标题、术语、段落合并和论证顺序；当前请求授权调整时再修改。
-- 新写时先明确本段要建立的判断及其支撑；润色时先理解因果、时间与条件关系，再调整表达。已有材料足够时直接工作。
-- 写作示例提供组织方式；其中的模型结构、实验数字和创新声明不构成当前稿件的事实。
-- 沿用稿件既有的英语变体；新英文稿默认美式英语。中文沟通使用用户采用的字形。
+- Work from the requested scope, the latest manuscript, and established technical facts. Preserve accepted titles, terminology, paragraph merges, and argument order unless the current request authorizes changes.
+- Before drafting, identify the paragraph's central claim and its support. Before revising, understand the causal, temporal, and conditional relationships. Proceed when the available material is sufficient.
+- Treat examples as demonstrations of organization. Their architectures, experimental numbers, and novelty claims are not facts about the current manuscript.
+- Preserve the manuscript's English variant; use US English for new drafts by default. Communicate in the user's language and script.
 
-## 句子与用词
+## Syntax and Word Choice
 
-- 让主语对应职责：用作者主语陈述贡献和设计选择，用模块或变量作主语解释计算，用被动句突出训练对象或设置。
-- 优先表达“谁，对什么，做什么，产生什么”。使用有明确宾语的操作动词，如 encode、compress、update、retrieve、condition、align、optimize。
-- 核心判断可用短句，机制和条件可用较长句。控制主语与谓语之间的修饰，不将架构、损失、数据和效果同时挤进一句。
-- 根据逻辑使用目的、机制、时间或条件从句。长短句随内容变化，不设置统一词数、从句数量或标点配额。
-- 修饰语优先界定技术属性、比较对象和实验条件。宣传性形容词、空泛重要性声明与自我评价通常删去。
-- 默认避免防御性表达、连续自问自答、刻意的“不是 X 而是 Y”、反复强调未做之事，以及元叙述式铺垫。
-- 限定词用于真实的不确定性和证据边界。确定的实现直接陈述；保留必要条件，不用模糊措辞包裹每个判断。
+- Match subjects to responsibilities: use author subjects for contributions and design choices, modules or variables for computation, and passive constructions when the trained object or experimental setting is the focus.
+- Express who performs which operation on what input, and what it produces. Prefer verbs with concrete objects, such as encode, compress, update, retrieve, condition, align, and optimize.
+- State the core operation or claim in a clear main clause, then add purpose, conditions, concessions, or results. Limit modifiers between subject and predicate; distribute architecture, losses, data, and effects across appropriate sentences.
+- Let the operation causing a limitation serve as the subject when useful. Connect the operation to its direct consequence and then to its effect on the task. Use clauses to make both internal and intersentence relationships traceable.
+- Use short sentences for central judgments and longer ones for mechanisms or conditions when appropriate. Let content determine length; impose no word-count, clause-count, or punctuation quotas.
+- Use modifiers to specify technical properties, comparison targets, and experimental conditions. Usually remove promotional adjectives, empty emphasis, and self-evaluation.
+- Avoid defensive phrasing, repeated rhetorical questions, forced corrective contrasts, repeated statements of what was not done, and unnecessary metadiscourse.
+- Use qualifiers for real uncertainty and evidence boundaries. State confirmed implementation details directly rather than wrapping every claim in vague caution.
 
-## 段落与论证
+## Paragraphs and Argument
 
-- 让段落承担明确功能：建立约束、解释局限、提出想法、说明机制、呈现证据，或讨论结果含义。按功能确定长度与段数。
-- 解释局限时推进到机制或具体情景，说明它如何影响任务。避免只列“效率低、泛化差、能力不足”等现象。
-- 介绍方法时先建立中心想法，再按信息流或读者理解顺序展开。输入、表示、状态更新、输出及监督之间要有明确关系。
-- 用信息承接组织句子：上一句的输出可以成为下一句的主语。用稳定术语维持指代，连接词仅标记确有必要的转折、细化或因果。
-- 引言由应用约束收束到具体问题，再给出方法与证据概览。贡献条目保持平行句法，分别交代不同的新操作或能力。
-- 相关工作围绕当前问题综合比较；方法围绕计算关系展开；结果围绕实验回答的问题组织。不要给所有章节套同一种段落模板。
-- 保留必要的真实对比；比较时指出具体机制和适用范围，不扩大为全部已有方法的缺陷。
+- Give each paragraph a clear function: establish a constraint, explain a limitation, introduce an idea, describe a mechanism, present evidence, or interpret a result. Let that function determine its length and structure.
+- Explain limitations through mechanisms or concrete situations and their task consequences. Go beyond lists of symptoms such as low efficiency, weak generalization, or limited capability.
+- Introduce the central design idea before following the information flow. Make inputs, representations, state updates, outputs, and supervision relate clearly to one another.
+- Open the next sentence with established information when useful. An output can become the next subject, and a defined representation can become the condition for the next operation. Reuse stable terminology to track objects, states, and updates.
+- Mark purpose, concession, contrast, progression, and consequence explicitly when needed. Choose clauses or sentence transitions according to the reading flow. Preserve necessary links without mechanically prefacing every sentence with a connector.
+- Narrow introductions from application constraints to a specific problem, then outline the method and evidence. Keep contribution statements parallel and distinguish their mechanisms, supervision, or capabilities.
+- Organize related work around the current problem, methods around computational relationships, and results around the questions answered. Adapt structure to the section's function.
+- When discussing prior work, use concessions to connect a capability with its cost under the same technical tradeoff. Specify the mechanism and scope of a comparison; do not extend a limitation to all previous methods.
 
-## 术语、证据与引用
+## Terminology, Evidence, and Citations
 
-- 首次定义名称或缩写，后续固定复用。区分输入数据、潜在表示、状态、模块和训练目标；不为避免重复而轮换近义词。
-- 保持技术语义和结论强度：训练目标、预期收益、实验观察、因果解释与形式保证不能互换。不要把“未直接优化”改写成“完全无法区分”。
-- 结果说明任务、指标、对照和条件。保留单位、分母、绝对变化与相对变化的区别；区分预测跨度、执行跨度、观察频率和动作频率。
-- 效率陈述对应测量对象：模块耗时、端到端延迟、吞吐与关键路径开销分别表达。异步重叠本身不证明零开销。
-- 引用紧邻其支持的论断。只新增已核实的文献或事实；参考文章的发表身份、风格观察和会议强制格式要求分别处理。
-- 技术流程、论文贡献和图表所示结果通常可用现在时；具体过去事件按语境使用过去时。保持时间关系清楚。
+- Define names and abbreviations on first use and reuse them consistently. Distinguish input data, latent representations, states, modules, and training objectives; do not rotate near-synonyms merely to avoid repetition.
+- Preserve technical meaning and claim strength. Training objectives, intended benefits, empirical observations, causal explanations, and formal guarantees are distinct. Do not turn a lack of direct optimization into a claim of complete inability.
+- Report results with their task, metric, baseline, and conditions. Preserve units, denominators, and the distinction between relative percentages and percentage points. Separate prediction horizon, execution horizon, observation rate, and action rate.
+- Match efficiency claims to the measured quantity: module runtime, end-to-end latency, throughput, or critical-path overhead. Asynchronous overlap alone does not establish zero additional latency.
+- Place citations next to the claims they support. Add only verified sources and facts. Distinguish a source's publication status, observations about its prose, and mandatory conference requirements.
+- Present tense usually suits technical processes, contributions, and findings shown in figures or tables. Use past tense for specific past events when appropriate and keep temporal relationships clear.
 
-## 编辑与交付
+## Editing and Delivery
 
-- 优先修复论证和信息顺序，再精简句子、检查术语、引用及语言。删除重复论点、可省略的过渡和无实际信息的句子。
-- 保留指定范围之外的用户修改。编辑 LaTeX 时维护章节标签、引用键、公式和宏；涉及结构或排版时沿用项目的编译与预览流程。
-- 按用户要求交付正文、文件或修改意见。说明影响技术含义的取舍；普通润色不附带冗长自检报告。
+- Repair the argument and information order before tightening sentences, checking terminology, and reviewing citations. Remove repeated claims, dispensable transitions, and sentences without substantive information.
+- Preserve user edits outside the requested scope. Maintain LaTeX labels, citation keys, equations, and macros; follow the project's compilation and preview workflow when structure or layout is affected.
+- Deliver the requested prose, files, or feedback. Explain choices that affect technical meaning; keep routine revision reports brief.
 
-需要可复用句式、段落示例或修改示范时，读取 [references/patterns.md](references/patterns.md)。
-用户要求学习 CVPR/VLA 论文写法或追溯本 skill 的阅读依据时，读取 [references/cvpr-vla-examples.md](references/cvpr-vla-examples.md)。这些实例不是固定格式要求。
+For clause organization, logical transitions, verb collocations, and paragraph examples, read [references/patterns.md](references/patterns.md).
+When asked to study CVPR/VLA writing or trace this skill's reading basis, read [references/cvpr-vla-examples.md](references/cvpr-vla-examples.md). It includes syntax observations from CVPR 2026 award-winning papers and related VLA papers. These examples are not mandatory templates.
