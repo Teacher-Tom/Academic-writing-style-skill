@@ -1,11 +1,11 @@
 ---
 name: academic-writing-style
-description: Draft, revise, and critique Chinese or English academic writing at sentence, paragraph, and manuscript level. Use for concise prose, paper organization, related-work, method, and experiment narratives, consistent terminology, and evidence-aligned claims, especially in CVPR-style ML, computer vision, and VLA papers. Focus on writing rather than a full research or peer-review workflow.
+description: Draft, revise, and critique Chinese or English academic writing, and plan paper figures and captions. Use for concise prose, manuscript organization, related-work, method, and experiment narratives, visual evidence, consistent terminology, and evidence-aligned claims, especially in CVPR-style ML, computer vision, and VLA papers. Focus on writing and figure planning rather than a full research or peer-review workflow.
 ---
 
 # Academic Writing Style
 
-Write direct, concrete, concise academic prose that makes the problem, mechanism, and evidence clear on first reading. Apply to sentence craft, paragraph revision, and manuscript organization in Chinese or English.
+Write direct, concrete, concise academic prose and plan figures that make the problem, mechanism, and evidence clear on first reading. Apply to sentence craft, paragraph revision, manuscript organization, and visual exposition in Chinese or English.
 
 ## Task and Source Material
 
@@ -54,6 +54,15 @@ Write direct, concrete, concise academic prose that makes the problem, mechanism
 - Place citations next to the claims they support. Add only verified sources and facts. Distinguish a source's publication status, observations about its prose, and mandatory conference requirements.
 - Present tense usually suits technical processes, contributions, and findings shown in figures or tables. Use past tense for specific past events when appropriate and keep temporal relationships clear.
 
+## Figures and Visual Evidence
+
+- Assign each figure a primary explanatory role. Introduction figures establish a problem, capability, or central idea; method figures explain computation and dependencies; experiment figures expose comparisons, trends, or concrete behavior. Classify by purpose rather than figure number or physical placement.
+- Choose layout from the relationship being shown: matched panels for comparisons, directed paths for computation, timelines for temporal dependencies, and aligned grids for qualitative results. Give the novel operation enough space to be understood and keep supporting detail subordinate.
+- Reuse terminology, symbols, colors, and object identities across panels where their meanings agree. Define arrow and line conventions when they distinguish data, supervision, recurrence, or deployment. In temporal systems, show when a state is read, updated, and available.
+- Distinguish schematic illustrations, observed inputs, generated intermediates, model predictions, and reference annotations. Keep comparisons aligned in input, crop, time, scale, and measurement conditions; label material differences.
+- Write captions that identify the subject, guide panel reading, define necessary encodings or conditions, and state the supported observation. Select content for the figure's role; a method caption need not claim experimental superiority.
+- Inspect figures at their final manuscript size. Adjust panel count, labels, contrast, spacing, and column span to preserve legibility. Treat award-paper layouts as examples to reason from, not fixed CVPR requirements.
+
 ## Editing and Delivery
 
 - Repair the argument and information order before tightening sentences, checking terminology, and reviewing citations. Remove repeated claims, dispensable transitions, and sentences without substantive information.
@@ -64,5 +73,6 @@ For clause organization, logical transitions, verb collocations, and paragraph e
 For related-work organization, comparison sentences, and technical positioning, read [references/related-work.md](references/related-work.md).
 For method exposition, equations, learning objectives, and training/inference descriptions, read [references/method-writing.md](references/method-writing.md).
 For experimental setup, result paragraphs, ablations, efficiency reports, and figure/table language, read [references/experiment-writing.md](references/experiment-writing.md).
+For introduction teasers, method diagrams, experiment plots, qualitative panels, captions, and visual critique, read [references/figure-design.md](references/figure-design.md).
 For paper outlines, section organization, and experimental narratives, read [references/manuscript-structure.md](references/manuscript-structure.md).
-When asked to study CVPR/VLA writing or trace this skill's reading basis, read [references/cvpr-vla-examples.md](references/cvpr-vla-examples.md). It includes observations on syntax, related work, methods, experiments, and whole-paper organization from CVPR 2025-2026 papers. These examples are not mandatory templates.
+When asked to study CVPR/VLA writing or trace this skill's reading basis, read [references/cvpr-vla-examples.md](references/cvpr-vla-examples.md). It includes writing observations from CVPR 2025-2026 papers and figure-design observations from CVPR 2023-2025 papers. These examples are not mandatory templates.
